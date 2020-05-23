@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,7 @@ public class ShowHeadlines extends Activity {
     ListView myListView;
     String urlAddress = "", urlCaption = "";
     SingleItem selectedNewsItem;
+    TextView txtInfo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,4 +78,11 @@ public class ShowHeadlines extends Activity {
             Log.e("Error DialogBox", e.getMessage());
         }
     }//showNiceDialogBox
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        txtInfo = findViewById(R.id.txtInfo);
+        txtInfo.setText("Stories");
+    }
 }

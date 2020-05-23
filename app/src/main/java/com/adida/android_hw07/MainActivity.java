@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -71,4 +74,11 @@ public class MainActivity extends Activity {
         adapterMainSubjects = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myUrlCaption);
         myMainListView.setAdapter(adapterMainSubjects);
     }//onCreate
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        TextView txtInfo = findViewById(R.id.txtInfo);
+        txtInfo.setText("Topics");
+    }
 } // MainAc

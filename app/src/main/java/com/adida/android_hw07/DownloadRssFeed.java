@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
@@ -48,6 +49,12 @@ public class DownloadRssFeed extends AsyncTask<String, Void, ArrayList<SingleIte
         ArrayAdapter<SingleItem> adapterNews = new ArrayAdapter<SingleItem>(callerContext, layoutID, result);
         callerContext.myListView.setAdapter(adapterNews);
         dialog.dismiss();
+
+        // custom
+        if(result == null || result.size() == 0){
+            TextView txtInfo = callerContext.txtInfo;
+            txtInfo.setText("No stories");
+        }
     }
 
     public SingleItem dissectItemNode(NodeList nodeList, int i) {

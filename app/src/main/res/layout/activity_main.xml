@@ -11,6 +11,14 @@
         android:layout_margin="10dp"
         android:background="@drawable/logo_npr"
         />
+    <TextView
+        android:id="@+id/txtInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Topics"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"></TextView>
 
     <ListView
         android:id="@+id/myListView"
