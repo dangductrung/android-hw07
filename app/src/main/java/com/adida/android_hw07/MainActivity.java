@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
             captions[i] = myUrlCaptionMenu[i][1];
         }
         context = getApplicationContext();
-        this.setTitle("NPR Headline News\n" + niceDate() );
+        this.setTitle("Vnexpress Headline News\n" + niceDate() );
 
         listView = (ListView) findViewById(R.id.listView);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

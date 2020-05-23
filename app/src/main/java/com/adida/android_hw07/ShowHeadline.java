@@ -32,7 +32,7 @@ public class ShowHeadline extends AppCompatActivity {
         Bundle myBundle = callingIntent.getExtras();
         urlAddress = myBundle.getString("address");
         urlCaption = myBundle.getString("caption");
-        this.setTitle("NPR – " + urlCaption + " \t" + MainActivity.niceDate());
+        this.setTitle("Vnexpress – " + urlCaption + " \t" + MainActivity.niceDate());
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
