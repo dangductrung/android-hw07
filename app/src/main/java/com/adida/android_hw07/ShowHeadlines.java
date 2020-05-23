@@ -62,7 +62,7 @@ public class ShowHeadlines extends Activity {
 //CAUTION: sometimes TITLE and DESCRIPTION include HTML markers
             final Uri storyLink = Uri.parse(selectedStoryItem.getLink());
             AlertDialog.Builder myBuilder = new AlertDialog.Builder(this);
-            myBuilder.setIcon(R.mipmap.ic_launcher).setTitle(Html.fromHtml(urlCaption))
+            myBuilder.setIcon(R.drawable.logo_npr).setTitle(Html.fromHtml(urlCaption))
                     .setMessage(title + "\n\n" + Html.fromHtml(description) + "\n")
                     .setPositiveButton("Close", null)
                     .setNegativeButton("More", new DialogInterface.OnClickListener() {
