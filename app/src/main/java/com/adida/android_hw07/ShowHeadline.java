@@ -13,6 +13,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -21,6 +24,7 @@ public class ShowHeadline extends AppCompatActivity {
     ArrayList<SingleItem> newsList = new ArrayList<SingleItem>();
     ListView myListView;
     String urlAddress = "", urlCaption = "";
+    int type = 0;
     SingleItem selectedNewsItem;
 
     @Override
@@ -28,11 +32,34 @@ public class ShowHeadline extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myListView = (ListView) this.findViewById(R.id.listView);
+        TextView title = (TextView) findViewById(R.id.channelName) ;
         Intent callingIntent = getIntent();
         Bundle myBundle = callingIntent.getExtras();
         urlAddress = myBundle.getString("address");
         urlCaption = myBundle.getString("caption");
-        this.setTitle("Vnexpress – " + urlCaption + " \t" + MainActivity.niceDate());
+        type = myBundle.getInt("type");
+        String content = "";
+
+        switch (type) {
+            case IntKeys.THANH_NIEN: {
+                content = "Thanh Nien";
+                break;
+            }
+            case IntKeys.TUOI_TRE: {
+                content = "Tuoi Tre";
+                break;
+            }
+            case IntKeys.VNEXPRESS: {
+                content = "VnExpress";
+                break;
+            }
+        }
+        title.setText(content);
+
+
+
+
+        this.setTitle(content + " – " + urlCaption + " \t" + MainActivity.niceDate());
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
